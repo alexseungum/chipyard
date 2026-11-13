@@ -1,0 +1,4 @@
+vlsi.core.power_tool: cs262_voltus
+
+power.voltus.macro_pgv: false
+power.voltus.rail: false

@@ -2,6 +2,10 @@ inputs.yml
 __pycache__
 hammer*.log
 build
+build-*
 src/test/output-*.json
 generated-src
 output.json
+fsdb2vcdLog
+fsdbextractLog
+/output

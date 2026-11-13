@@ -1,0 +1,18 @@
+# BWRC environment overrides for the scratch-vs-NFS PAR benchmark (passed via EXTRA_CONFS)
+technology.sky130.sky130A: "/tools/commercial/skywater/local/open_pdks-2023.10/share/pdk/sky130A"
+technology.sky130.sram22_sky130_macros: "/tools/commercial/skywater/local/chipyard-tutorial/sram22_sky130_macros"
+
+synthesis.genus.genus_bin: "/tools/cadence/GENUS/GENUS211/bin/genus"
+par.innovus.innovus_bin: "/tools/cadence/INNOVUS/INNOVUS211/bin/innovus"
+
+cadence.cadence_home: "/tools/cadence"
+cadence.CDS_LIC_FILE: "5280@bwrcflex-1.eecs.berkeley.edu:5280@bwrcflex-2.eecs.berkeley.edu"
+mentor.mentor_home: "/tools/mentor"
+mentor.MGLS_LICENSE_FILE: "1717@bwrcflex-1.eecs.berkeley.edu:1717@bwrcflex-2.eecs.berkeley.edu"
+synopsys.synopsys_home: "/tools/synopsys"
+synopsys.SNPSLMD_LICENSE_FILE: "1701@bwrcflex-1.eecs.berkeley.edu:1701@bwrcflex-2.eecs.berkeley.edu"
+
+# Genus 21.1 + hammer's ">=211" clock-mapping flow (set_db cts_buffer_cells {sky130_fd_sc_hd__clkbuf_1})
+# makes syn_generic fail with LBR-171/172 ("no usable inverters"). Reporting version 201 skips only that block;
+# genus_bin above still points at the real GENUS211 binary.
+synthesis.genus.version: "201"
