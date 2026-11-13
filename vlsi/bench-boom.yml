@@ -1,0 +1,80 @@
+# MediumBoomBenchConfig floorplan for the scratch-vs-NFS benchmark (~52% std-cell density after syn: 13.3 mm^2 incl. macros)
+vlsi.inputs.placement_constraints:
+  - path: "ChipTop"
+    type: toplevel
+    x: 0
+    y: 0
+    width: 5244.00
+    height: 4624.00
+    margins:
+      left: 10.12
+      right: 10.12
+      top: 10.88
+      bottom: 10.88
+  # I$ data + L2 TLB
+  - path: "ChipTop/system/tile_prci_domain/element_reset_domain_boom_tile/frontend/icache/dataArrayWay_0/dataArrayWay_0_ext/mem_0_0"
+    type: hardmacro
+    x: 49.68
+    y: 149.60
+    orientation: r90
+  - path: "ChipTop/system/tile_prci_domain/element_reset_domain_boom_tile/frontend/icache/dataArrayWay_1/dataArrayWay_0_ext/mem_0_0"
+    type: hardmacro
+    x: 49.68
+    y: 693.60
+    orientation: r90
+  - path: "ChipTop/system/tile_prci_domain/element_reset_domain_boom_tile/frontend/icache/dataArrayWay_2/dataArrayWay_0_ext/mem_0_0"
+    type: hardmacro
+    x: 49.68
+    y: 1237.60
+    orientation: r90
+  - path: "ChipTop/system/tile_prci_domain/element_reset_domain_boom_tile/frontend/icache/dataArrayWay_3/dataArrayWay_0_ext/mem_0_0"
+    type: hardmacro
+    x: 49.68
+    y: 1781.60
+    orientation: r90
+  - path: "ChipTop/system/tile_prci_domain/element_reset_domain_boom_tile/ptw/l2_tlb_ram_0/l2_tlb_ram_0_ext/mem_0_0"
+    type: hardmacro
+    x: 49.68
+    y: 2325.60
+    orientation: r90
+  # I$ / D$ tags
+  - path: "ChipTop/system/tile_prci_domain/element_reset_domain_boom_tile/frontend/icache/tag_array/tag_array_0_ext/mem_0_0"
+    type: hardmacro
+    x: 598.00
+    y: 149.60
+    orientation: r90
+  - path: "ChipTop/system/tile_prci_domain/element_reset_domain_boom_tile/frontend/icache/tag_array/tag_array_0_ext/mem_0_1"
+    type: hardmacro
+    x: 598.00
+    y: 435.20
+    orientation: r90
+  - path: "ChipTop/system/tile_prci_domain/element_reset_domain_boom_tile/frontend/icache/tag_array/tag_array_0_ext/mem_0_2"
+    type: hardmacro
+    x: 598.00
+    y: 720.80
+    orientation: r90
+  - path: "ChipTop/system/tile_prci_domain/element_reset_domain_boom_tile/frontend/icache/tag_array/tag_array_0_ext/mem_0_3"
+    type: hardmacro
+    x: 598.00
+    y: 1006.40
+    orientation: r90
+  - path: "ChipTop/system/tile_prci_domain/element_reset_domain_boom_tile/dcache/meta_0/tag_array/tag_array_ext/mem_0_0"
+    type: hardmacro
+    x: 598.00
+    y: 1292.00
+    orientation: r90
+  - path: "ChipTop/system/tile_prci_domain/element_reset_domain_boom_tile/dcache/meta_0/tag_array/tag_array_ext/mem_0_1"
+    type: hardmacro
+    x: 598.00
+    y: 1577.60
+    orientation: r90
+  - path: "ChipTop/system/tile_prci_domain/element_reset_domain_boom_tile/dcache/meta_0/tag_array/tag_array_ext/mem_0_2"
+    type: hardmacro
+    x: 598.00
+    y: 1863.20
+    orientation: r90
+  - path: "ChipTop/system/tile_prci_domain/element_reset_domain_boom_tile/dcache/meta_0/tag_array/tag_array_ext/mem_0_3"
+    type: hardmacro
+    x: 598.00
+    y: 2148.80
+    orientation: r90

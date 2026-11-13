@@ -1,0 +1,18 @@
+power.reports.blocks:
+  - {name: tile_prci_domain, inst: system/tile_prci_domain}
+  - {name: rocket_tile, inst: system/tile_prci_domain/element_reset_domain_rockettile}
+  - {name: core, inst: system/tile_prci_domain/element_reset_domain_rockettile/core}
+  - {name: csr, inst: system/tile_prci_domain/element_reset_domain_rockettile/core/csr}
+  - {name: muldiv, inst: system/tile_prci_domain/element_reset_domain_rockettile/core/div}
+  - {name: fpu, inst: system/tile_prci_domain/element_reset_domain_rockettile/fpuOpt}
+  - {name: frontend, inst: system/tile_prci_domain/element_reset_domain_rockettile/frontend}
+  - {name: icache, inst: system/tile_prci_domain/element_reset_domain_rockettile/frontend/icache}
+  - {name: dcache, inst: system/tile_prci_domain/element_reset_domain_rockettile/dcache}
+  - {name: ptw, inst: system/tile_prci_domain/element_reset_domain_rockettile/ptw}
+  - {name: sbus, inst: system/sbus}
+  - {name: mbus, inst: system/mbus}
+  - {name: cbus, inst: system/cbus}
+  - {name: pbus, inst: system/pbus}
+  - {name: fbus, inst: system/fbus}
+  - {name: coherence, inst: system/coh_wrapper}
+  - {name: rocket_core, inst: system/tile_prci_domain/element_reset_domain_rockettile/core/*, exclude: "**/CLKGATE_*", mode: each}

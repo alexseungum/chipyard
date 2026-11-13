@@ -1,0 +1,97 @@
+# BigRocketConfig floorplan for the scratch-vs-NFS benchmark (overrides TinyRocket placement in example-sky130.yml)
+vlsi.inputs.placement_constraints:
+  - path: "ChipTop"
+    type: toplevel
+    x: 0
+    y: 0
+    width: 3588
+    height: 2992
+    margins:
+      left: 10.12
+      right: 10.12
+      top: 10.88
+      bottom: 10.88
+  # dd
+  - path: "ChipTop/system/tile_prci_domain/element_reset_domain_rockettile/dcache/data/rockettile_dcache_data_arrays_0/rockettile_dcache_data_arrays_0_ext/mem_0_0"
+    type: hardmacro
+    x: 49.68
+    y: 149.60
+    orientation: r90
+  - path: "ChipTop/system/tile_prci_domain/element_reset_domain_rockettile/dcache/data/rockettile_dcache_data_arrays_0/rockettile_dcache_data_arrays_0_ext/mem_0_1"
+    type: hardmacro
+    x: 49.68
+    y: 693.60
+    orientation: r90
+  - path: "ChipTop/system/tile_prci_domain/element_reset_domain_rockettile/dcache/data/rockettile_dcache_data_arrays_0/rockettile_dcache_data_arrays_0_ext/mem_0_2"
+    type: hardmacro
+    x: 49.68
+    y: 1237.60
+    orientation: r90
+  - path: "ChipTop/system/tile_prci_domain/element_reset_domain_rockettile/dcache/data/rockettile_dcache_data_arrays_0/rockettile_dcache_data_arrays_0_ext/mem_0_3"
+    type: hardmacro
+    x: 49.68
+    y: 1781.60
+    orientation: r90
+  # dt
+  - path: "ChipTop/system/tile_prci_domain/element_reset_domain_rockettile/dcache/rockettile_dcache_tag_array/rockettile_dcache_tag_array_ext/mem_0_0"
+    type: hardmacro
+    x: 598.00
+    y: 149.60
+    orientation: r90
+  - path: "ChipTop/system/tile_prci_domain/element_reset_domain_rockettile/dcache/rockettile_dcache_tag_array/rockettile_dcache_tag_array_ext/mem_0_1"
+    type: hardmacro
+    x: 598.00
+    y: 435.20
+    orientation: r90
+  - path: "ChipTop/system/tile_prci_domain/element_reset_domain_rockettile/dcache/rockettile_dcache_tag_array/rockettile_dcache_tag_array_ext/mem_0_2"
+    type: hardmacro
+    x: 598.00
+    y: 720.80
+    orientation: r90
+  - path: "ChipTop/system/tile_prci_domain/element_reset_domain_rockettile/dcache/rockettile_dcache_tag_array/rockettile_dcache_tag_array_ext/mem_0_3"
+    type: hardmacro
+    x: 598.00
+    y: 1006.40
+    orientation: r90
+  # id
+  - path: "ChipTop/system/tile_prci_domain/element_reset_domain_rockettile/frontend/icache/rockettile_icache_data_arrays_0/rockettile_icache_data_arrays_0_ext/mem_0_0"
+    type: hardmacro
+    x: 3036.00
+    y: 149.60
+    orientation: mx90
+  - path: "ChipTop/system/tile_prci_domain/element_reset_domain_rockettile/frontend/icache/rockettile_icache_data_arrays_0/rockettile_icache_data_arrays_0_ext/mem_0_1"
+    type: hardmacro
+    x: 3036.00
+    y: 693.60
+    orientation: mx90
+  - path: "ChipTop/system/tile_prci_domain/element_reset_domain_rockettile/frontend/icache/rockettile_icache_data_arrays_1/rockettile_icache_data_arrays_0_ext/mem_0_0"
+    type: hardmacro
+    x: 3036.00
+    y: 1237.60
+    orientation: mx90
+  - path: "ChipTop/system/tile_prci_domain/element_reset_domain_rockettile/frontend/icache/rockettile_icache_data_arrays_1/rockettile_icache_data_arrays_0_ext/mem_0_1"
+    type: hardmacro
+    x: 3036.00
+    y: 1781.60
+    orientation: mx90
+  # it
+  - path: "ChipTop/system/tile_prci_domain/element_reset_domain_rockettile/frontend/icache/rockettile_icache_tag_array/rockettile_icache_tag_array_ext/mem_0_0"
+    type: hardmacro
+    x: 2716.76
+    y: 149.60
+    orientation: mx90
+  - path: "ChipTop/system/tile_prci_domain/element_reset_domain_rockettile/frontend/icache/rockettile_icache_tag_array/rockettile_icache_tag_array_ext/mem_0_1"
+    type: hardmacro
+    x: 2716.76
+    y: 435.20
+    orientation: mx90
+  - path: "ChipTop/system/tile_prci_domain/element_reset_domain_rockettile/frontend/icache/rockettile_icache_tag_array/rockettile_icache_tag_array_ext/mem_0_2"
+    type: hardmacro
+    x: 2716.76
+    y: 720.80
+    orientation: mx90
+  - path: "ChipTop/system/tile_prci_domain/element_reset_domain_rockettile/frontend/icache/rockettile_icache_tag_array/rockettile_icache_tag_array_ext/mem_0_3"
+    type: hardmacro
+    x: 2716.76
+    y: 1006.40
+    orientation: mx90

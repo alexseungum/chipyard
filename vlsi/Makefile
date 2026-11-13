@@ -13,6 +13,7 @@ sim_dir=$(abspath .)
 # include shared variables
 #########################################################################################
 include $(vlsi_dir)/tutorial.mk
+include $(vlsi_dir)/power-flow.mk
 include $(base_dir)/variables.mk
 
 #########################################################################################
