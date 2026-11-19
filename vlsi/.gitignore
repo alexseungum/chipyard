@@ -8,4 +8,6 @@ generated-src
 output.json
 fsdb2vcdLog
 fsdbextractLog
+fsdbdebugLog
 /output
+openroad-env.yml

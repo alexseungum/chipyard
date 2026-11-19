@@ -1,0 +1,49 @@
+#!/usr/bin/env python3
+
+import os
+
+from hammer.vlsi import CLIDriver, HammerTool, HammerToolHookAction
+
+from typing import List
+
+
+def detailed_route(x: HammerTool) -> bool:
+    metals = x.get_stackup().metals[1:]
+    x.block_append(f"""
+    set_propagated_clock [all_clocks]
+
+    set_thread_count {x.get_setting('vlsi.core.max_threads')}
+
+    detailed_route \\
+        -bottom_routing_layer {metals[0].name} \\
+        -top_routing_layer {metals[-1].name} \\
+        -output_drc {x.run_dir}/{x.top_module}_route_drc.rpt \\
+        -output_maze {x.run_dir}/{x.top_module}_maze.log \\
+        -save_guide_updates \\
+        -droute_end_iter {os.environ.get('DROUTE_END_ITER', '8')} \\
+        -verbose 1
+    """)
+    return True
+
+
+def extraction(x: HammerTool) -> bool:
+    corners = x.get_mmmc_corners()
+    x.block_append("define_process_corner -ext_model_index 0 X")
+    for openrcx_file in x.get_setting('par.openroad.openrcx_techfiles'):
+        x.block_append(f"extract_parasitics -ext_model_file {openrcx_file} -corner_cnt {len(corners) if corners else 1}")
+    x.block_append(f"write_spef {x.output_spef_paths[0]}")
+    x.block_append("set_thread_count 1")
+    return True
+
+
+class OpenROADDriver(CLIDriver):
+    def get_extra_par_hooks(self) -> List[HammerToolHookAction]:
+        return [
+            HammerTool.make_removal_hook("place_bumps"),
+            HammerTool.make_replacement_hook("detailed_route", detailed_route),
+            HammerTool.make_replacement_hook("extraction", extraction),
+        ]
+
+
+if __name__ == '__main__':
+    OpenROADDriver().main()
